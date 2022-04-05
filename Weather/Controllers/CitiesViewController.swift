@@ -25,6 +25,25 @@ class CitiesViewController: UIViewController {
         }
     }
     
+    @IBAction func addCityButtonClicked(_ sender: Any) {
+        
+        let alert = UIAlertController(
+          title: "Choose city",
+          message: nil,
+          preferredStyle: .alert)
+        alert.addTextField()
+        
+        let submitAction = UIAlertAction(
+          title: "Submit",
+          style: .default) { [unowned alert, weak self] _ in
+            guard let newcity = alert.textFields?.first?.text else { return }
+            self?.viewModel.addNewCity(cityName: newcity)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(submitAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+      }
 }
 
 

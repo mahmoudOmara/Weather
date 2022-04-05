@@ -11,7 +11,11 @@ import Foundation
 class CitiesViewModel {
     
     var numberOfRows = Box(0)
-    private var cities: [City] = []
+    private var cities: [City] = [] {
+        didSet {
+            self.numberOfRows.value = cities.count
+        }
+    }
     
     init() {
         getPreviouslyAddedCities()
@@ -24,6 +28,10 @@ class CitiesViewModel {
     private func getPreviouslyAddedCities() {
         //TODO:- get cities from core data
         self.cities = [City(name: "Alex"), City(name: "Cairo")]
-        self.numberOfRows = Box(cities.count)
+        
+    }
+    
+    func addNewCity(cityName: String) {
+        self.cities.append(City(name: cityName))
     }
 }
