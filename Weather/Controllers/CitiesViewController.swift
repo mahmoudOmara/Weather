@@ -23,27 +23,41 @@ class CitiesViewController: UIViewController {
         viewModel.numberOfRows.bind { [weak self] _ in
             self?.citiesTableView.reloadData()
         }
+        viewModel.route.bind { [weak self] route in
+            guard let route = route else { return }
+            self?.navigateByUsing(route: route)
+        }
+    }
+    
+    private func navigateByUsing(route: Route) {
+        
+        func navigateToAddNewCity() {
+            let alert = UIAlertController(title: "Choose city", message: nil, preferredStyle: .alert)
+            alert.addTextField()
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { [unowned alert, weak self] _ in
+                guard let newcity = alert.textFields?.first?.text else { return }
+                self?.viewModel.addNewCity(cityName: newcity)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            alert.addAction(submitAction)
+            alert.addAction(cancelAction)
+            present(alert, animated: true)
+          }
+        
+        switch route {
+        case .addNewCity:
+            navigateToAddNewCity()
+        case .histoyAboutCity(let city):
+            break
+        case .weatherForCity(let city):
+            break
+        }
     }
     
     @IBAction func addCityButtonClicked(_ sender: Any) {
-        
-        let alert = UIAlertController(
-          title: "Choose city",
-          message: nil,
-          preferredStyle: .alert)
-        alert.addTextField()
-        
-        let submitAction = UIAlertAction(
-          title: "Submit",
-          style: .default) { [unowned alert, weak self] _ in
-            guard let newcity = alert.textFields?.first?.text else { return }
-            self?.viewModel.addNewCity(cityName: newcity)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-        alert.addAction(submitAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true)
-      }
+        self.viewModel.addNewCityClicked()
+    }
 }
 
 

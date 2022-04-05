@@ -10,6 +10,8 @@ import Foundation
 
 class CitiesViewModel {
     
+    
+    var route: Box<Route?> = Box(nil)
     var numberOfRows = Box(0)
     private var cities: [(city: City, mangedCity: ManagedCity)] = [] {
         didSet {
@@ -33,6 +35,10 @@ class CitiesViewModel {
             guard let cityName = $0.name else { return nil }
             return (city: City(name: cityName), mangedCity: $0)
         }
+    }
+    
+    func addNewCityClicked() {
+        route.value = .addNewCity
     }
     
     func addNewCity(cityName: String) {
