@@ -15,7 +15,3 @@ class CityCellViewModel {
     }
 
 }
-
-struct City {
-    var name: String
-}
