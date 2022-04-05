@@ -8,10 +8,10 @@
 import Foundation
 
 class CityCellViewModel {
-    let name: String
+    let name: Box<String>
 
     init(city: City) {
-        name = city.name
+        name = Box(city.name)
     }
 
 }

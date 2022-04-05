@@ -10,8 +10,8 @@ import Foundation
 
 class CitiesViewModel {
     
-    var numberOfRows: Int = 0
-    var cities: [City] = []
+    var numberOfRows = Box(0)
+    private var cities: [City] = []
     
     init() {
         getPreviouslyAddedCities()
@@ -23,7 +23,7 @@ class CitiesViewModel {
     
     private func getPreviouslyAddedCities() {
         //TODO:- get cities from core data
-        self.cities = []
-        self.numberOfRows = cities.count
+        self.cities = [City(name: "Alex"), City(name: "Cairo")]
+        self.numberOfRows = Box(cities.count)
     }
 }

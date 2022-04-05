@@ -18,6 +18,11 @@ class CitiesViewController: UIViewController {
         
         citiesTableView.register(CityTableViewCell.nib(), forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
         citiesTableView.dataSource = self
+        citiesTableView.delegate = self
+        
+        viewModel.numberOfRows.bind { [weak self] _ in
+            self?.citiesTableView.reloadData()
+        }
     }
     
 }
@@ -31,7 +36,13 @@ extension CitiesViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        return viewModel.numberOfRows.value
     }
 
+}
+
+extension CitiesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

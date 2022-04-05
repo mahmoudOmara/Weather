@@ -30,7 +30,9 @@ class CityTableViewCell: UITableViewCell {
     
     
     func configure(viewModel: CityCellViewModel) {
-        nameLabel.text = viewModel.name
+        viewModel.name.bind { [weak self] cityName in
+            self?.nameLabel.text = cityName
+        }
     }
 
 }
