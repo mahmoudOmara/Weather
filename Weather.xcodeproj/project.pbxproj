@@ -71,6 +71,15 @@
 			path = NavigationRoutes;
 			sourceTree = "<group>";
 		};
+		04BD9DA227FD09CF00386C8C /* CitesViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04C16A4927FC8EB300D639E1 /* CitiesViewModel.swift */,
+				04C16A4B27FC9EF000D639E1 /* CityCellViewModel.swift */,
+			);
+			path = CitesViewModel;
+			sourceTree = "<group>";
+		};
 		04C16A4F27FCA09500D639E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +154,7 @@
 		04E80BF527FC76EA0022D00C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				04C16A4927FC8EB300D639E1 /* CitiesViewModel.swift */,
-				04C16A4B27FC9EF000D639E1 /* CityCellViewModel.swift */,
+				04BD9DA227FD09CF00386C8C /* CitesViewModel */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
