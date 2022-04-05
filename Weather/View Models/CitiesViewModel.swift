@@ -26,12 +26,20 @@ class CitiesViewModel {
     }
     
     private func getPreviouslyAddedCities() {
-        //TODO:- get cities from core data
-        self.cities = [City(name: "Alex"), City(name: "Cairo")]
         
+        let managedCities = CoreDataManager.shared.fetch(ofType: ManagedCity.self)
+        
+        self.cities = managedCities.compactMap {
+            guard let cityName = $0.name else { return nil }
+            return City(name: cityName)
+        }
     }
     
     func addNewCity(cityName: String) {
+        
+        let managedCity = ManagedCity(context: CoreDataManager.shared.context)
+        managedCity.name = cityName
+        CoreDataManager.shared.saveContext()
         self.cities.append(City(name: cityName))
     }
 }
