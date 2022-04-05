@@ -11,6 +11,8 @@ class CityTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = String(describing: CityTableViewCell.self)
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,7 +30,7 @@ class CityTableViewCell: UITableViewCell {
     
     
     func configure(viewModel: CityCellViewModel) {
-
+        nameLabel.text = viewModel.name
     }
 
 }
