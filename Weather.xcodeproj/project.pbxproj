@@ -130,6 +130,15 @@
 			path = CitesViewModel;
 			sourceTree = "<group>";
 		};
+		04BDB93627FDC6F600385778 /* CityHistoryViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04BA366527FDAFCA0077847C /* CityHistoryViewModel.swift */,
+				04BDB93427FDC44000385778 /* HistoryCellViewModel.swift */,
+			);
+			path = CityHistoryViewModel;
+			sourceTree = "<group>";
+		};
 		04C16A4F27FCA09500D639E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +220,7 @@
 			children = (
 				04BD9DA227FD09CF00386C8C /* CitesViewModel */,
 				04BA366427FDAFA30077847C /* CityWeatherDetailsViewModel */,
-				04BA366527FDAFCA0077847C /* CityHistoryViewModel.swift */,
-				04BDB93427FDC44000385778 /* HistoryCellViewModel.swift */,
+				04BDB93627FDC6F600385778 /* CityHistoryViewModel */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
