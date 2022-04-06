@@ -11,7 +11,7 @@ import Foundation
 class CitiesViewModel {
     
     
-    var route: Box<Route?> = Box(nil)
+    var route: Box<AddCityViewRoutes?> = Box(nil)
     var numberOfRows = Box(0)
     private var cities: [(city: City, mangedCity: ManagedCity)] = [] {
         didSet {
@@ -44,7 +44,7 @@ class CitiesViewModel {
     func didSelectCity(at index: Int) {
         let generalCity = cities[index]
         let cityWeatherDetailsViewModel = CityWeatherDetailsViewModel(city: generalCity.city, managedCity: generalCity.mangedCity)
-        route.value = .weatherForCity(cityWeatherDetailsViewModel: cityWeatherDetailsViewModel)
+        route.value = .weatherDetailsForCity(cityWeatherDetailsViewModel: cityWeatherDetailsViewModel)
     }
     
     func cityDetailDisclosureButtonClicked(at index: Int) {

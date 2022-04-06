@@ -29,7 +29,7 @@ class CitiesViewController: UIViewController {
         }
     }
     
-    private func navigateByUsing(route: Route) {
+    private func navigateByUsing(route: AddCityViewRoutes) {
         
         func navigateToAddNewCity() {
             let alert = UIAlertController(title: "Choose city", message: nil, preferredStyle: .alert)
@@ -62,7 +62,7 @@ class CitiesViewController: UIViewController {
             navigateToAddNewCity()
         case let .histoyAboutCity(cityHistoryViewModel):
             navigateToCityHistory(cityHistoryViewModel)
-        case let .weatherForCity(cityWeatherDetailsViewModel):
+        case let .weatherDetailsForCity(cityWeatherDetailsViewModel):
             navigateToCityWeatherDetails(cityWeatherDetailsViewModel)
         }
     }

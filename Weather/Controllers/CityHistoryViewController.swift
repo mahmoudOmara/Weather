@@ -32,11 +32,24 @@ class CityHistoryViewController: UIViewController {
         viewModel.numberOfRows.bind { [weak self] _ in
             self?.historyTableView.reloadData()
         }
-//        
-//        viewModel.route.bind { [weak self] route in
-//            guard let route = route else { return }
-//            self?.navigateByUsing(route: route)
-//        }
+        
+        viewModel.route.bind { [weak self] route in
+            guard let route = route else { return }
+            self?.navigateByUsing(route: route)
+        }
+    }
+    
+    private func navigateByUsing(route: HistoryViewRoutes) {
+        func navigateToCityWeatherDetails(_ cityWeatherDetailsViewModel: CityWeatherDetailsViewModel) {
+            let cityWeatherDetailsViewController = CityWeatherDetailsViewController.storyBoard.instantiateViewController(withIdentifier: CityWeatherDetailsViewController.storyBoardIdentifier) as! CityWeatherDetailsViewController
+            cityWeatherDetailsViewController.viewModel = cityWeatherDetailsViewModel
+            self.present(cityWeatherDetailsViewController, animated: true)
+        }
+        
+        switch route {
+        case let .weatherDetailsForCity(cityWeatherDetailsViewModel):
+            navigateToCityWeatherDetails(cityWeatherDetailsViewModel)
+        }
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -61,7 +74,7 @@ extension CityHistoryViewController: UITableViewDataSource {
 extension CityHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        viewModel.didSelectCity(at: indexPath.row)
+        viewModel.didSelectHistory(at: indexPath.row)
     }
     
 }

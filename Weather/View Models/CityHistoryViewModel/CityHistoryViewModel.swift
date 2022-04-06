@@ -16,6 +16,7 @@ class CityHistoryViewModel {
 
     var numberOfRows = Box(0)
     let cityName = Box("")
+    var route: Box<HistoryViewRoutes?> = Box(nil)
 
     init(city: City, managedCity: ManagedCity) {
         self.city = city
@@ -33,5 +34,9 @@ class CityHistoryViewModel {
     
     func viewModelForCell(at index: Int) -> HistoryCellViewModel {
         return HistoryCellViewModel(cityWeatherInfo: historyWeatherInfo[index].cityWeatherInfo)
+    }
+    
+    func didSelectHistory(at index: Int) {
+        route.value = .weatherDetailsForCity(cityWeatherDetailsViewModel: CityWeatherDetailsViewModel(city: city, managedCity: managedCity, weatherInfo: historyWeatherInfo[index].cityWeatherInfo))
     }
 }
