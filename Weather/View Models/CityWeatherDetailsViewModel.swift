@@ -20,11 +20,18 @@ class CityWeatherDetailsViewModel {
       return tempFormatter
     }()
     
+    private let dateFormatter: DateFormatter = {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "dd.MM.yyyy - HH:mm"
+      return dateFormatter
+    }()
+    
     let icon: Box<UIImage?> = Box(nil)
     let description = Box("")
     let temp = Box("")
     let humidity = Box("")
     let wind = Box("")
+    let dateRecievedOn = Box("")
     
     init(city: City, managedCity: ManagedCity) {
         self.city = city
@@ -41,6 +48,7 @@ class CityWeatherDetailsViewModel {
             self.temp.value = (self.numbersFormatter.string(from: weatherInfo.temp as NSNumber) ?? "") + "° C"
             self.humidity.value = (self.numbersFormatter.string(from: weatherInfo.humidity as NSNumber) ?? "") + "%"
             self.wind.value =  (self.numbersFormatter.string(from: weatherInfo.wind as NSNumber) ?? "") + " km/h"
+            self.dateRecievedOn.value = "Weather information for London received on " + self.dateFormatter.string(from: weatherInfo.dateRecieved)
         }
     }
 }

@@ -229,6 +229,12 @@
                                     <constraint firstAttribute="trailing" secondItem="avV-pw-u20" secondAttribute="trailing" constant="30" id="o1d-aC-MkP"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRn-RT-cfc">
+                                <rect key="frame" x="16" y="831.5" width="382" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pLE-H4-3Un"/>
                         <color key="backgroundColor" name="BackgroundColor"/>
@@ -237,17 +243,21 @@
                             <constraint firstAttribute="trailing" secondItem="P6u-ro-QfA" secondAttribute="trailing" id="CEu-hY-Sow"/>
                             <constraint firstItem="pU9-GO-wts" firstAttribute="top" secondItem="pLE-H4-3Un" secondAttribute="top" constant="-10" id="DiX-kk-OSt"/>
                             <constraint firstItem="P6u-ro-QfA" firstAttribute="leading" secondItem="guA-iG-lbY" secondAttribute="leading" id="GM2-DB-Qgg"/>
+                            <constraint firstItem="iRn-RT-cfc" firstAttribute="leading" secondItem="pLE-H4-3Un" secondAttribute="leading" constant="16" id="Itn-gx-8vu"/>
                             <constraint firstItem="OwT-I1-nL9" firstAttribute="top" secondItem="pU9-GO-wts" secondAttribute="bottom" constant="30" id="K1D-fg-UBg"/>
                             <constraint firstAttribute="bottom" secondItem="P6u-ro-QfA" secondAttribute="bottom" id="Pes-Nn-iPB"/>
+                            <constraint firstItem="pLE-H4-3Un" firstAttribute="trailing" secondItem="iRn-RT-cfc" secondAttribute="trailing" constant="16" id="RcF-dq-rDZ"/>
                             <constraint firstItem="pU9-GO-wts" firstAttribute="centerY" secondItem="YIJ-us-zRc" secondAttribute="centerY" constant="23" id="RzO-LY-ugs"/>
                             <constraint firstItem="pU9-GO-wts" firstAttribute="centerX" secondItem="vgq-NZ-hI6" secondAttribute="centerX" constant="15" id="aqG-bg-KOe"/>
                             <constraint firstItem="pLE-H4-3Un" firstAttribute="trailing" secondItem="OwT-I1-nL9" secondAttribute="trailing" constant="50" id="eW6-ap-e2Q"/>
                             <constraint firstItem="jd6-oi-l3V" firstAttribute="centerX" secondItem="guA-iG-lbY" secondAttribute="centerX" id="mkP-BX-6Jz"/>
+                            <constraint firstItem="pLE-H4-3Un" firstAttribute="bottom" secondItem="iRn-RT-cfc" secondAttribute="bottom" constant="16" id="pcn-Zi-Fy2"/>
                             <constraint firstItem="pLE-H4-3Un" firstAttribute="leading" secondItem="pU9-GO-wts" secondAttribute="leading" id="uie-ul-XKM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="npk-lU-vj7"/>
                     <connections>
+                        <outlet property="dateRecievedOnLabel" destination="iRn-RT-cfc" id="N9J-RN-PSc"/>
                         <outlet property="descriptionLabel" destination="rZ2-bG-vfX" id="zNi-0u-RR4"/>
                         <outlet property="detailsCardView" destination="OwT-I1-nL9" id="kQC-h4-6vP"/>
                         <outlet property="humidityLabel" destination="bCK-uh-u2T" id="PIP-82-UWC"/>

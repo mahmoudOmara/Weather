@@ -15,6 +15,7 @@ class CityWeatherDetailsViewController: UIViewController {
     @IBOutlet weak var tempratureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var dateRecievedOnLabel: UILabel!
     
     static let storyBoard = UIStoryboard(name: "Weather", bundle: nil)
     static let storyBoardIdentifier = String(describing: CityWeatherDetailsViewController.self)
@@ -51,6 +52,10 @@ class CityWeatherDetailsViewController: UIViewController {
         
         viewModel.wind.bind { [weak self] in
             self?.windSpeedLabel.text = $0
+        }
+        
+        viewModel.dateRecievedOn.bind { [weak self] in
+            self?.dateRecievedOnLabel.text = $0
         }
     }
 

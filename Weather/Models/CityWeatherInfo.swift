@@ -13,6 +13,7 @@ struct CityWeatherInfo {
     var temp: Double
     var humidity: Double
     var wind: Double
+    var dateRecieved: Date
 }
 
 extension CityWeatherInfo: Decodable {
@@ -60,5 +61,7 @@ extension CityWeatherInfo: Decodable {
         //wind
         let windContainer = try container.nestedContainer(keyedBy: WindKeys.self, forKey: .wind)
         wind = try windContainer.decode(Double.self, forKey: .speed)
+        
+        dateRecieved = Date()
     }
 }
