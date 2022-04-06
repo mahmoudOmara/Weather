@@ -47,6 +47,12 @@ class CitiesViewModel {
         route.value = .weatherForCity(cityWeatherDetailsViewModel: cityWeatherDetailsViewModel)
     }
     
+    func cityDetailDisclosureButtonClicked(at index: Int) {
+        let generalCity = cities[index]
+        let cityHistoryViewModel = CityHistoryViewModel(city: generalCity.city, managedCity: generalCity.mangedCity)
+        route.value = .histoyAboutCity(cityHistoryViewModel: cityHistoryViewModel)
+    }
+    
     func addNewCity(cityName: String) {
         let managedCity = ManagedCity(context: CoreDataManager.shared.context)
         managedCity.name = cityName

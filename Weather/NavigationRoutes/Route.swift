@@ -9,6 +9,6 @@ import Foundation
 
 enum Route {
     case addNewCity
-    case histoyAboutCity(city: City)
+    case histoyAboutCity(cityHistoryViewModel: CityHistoryViewModel)
     case weatherForCity(cityWeatherDetailsViewModel: CityWeatherDetailsViewModel)
 }
