@@ -305,7 +305,7 @@
                                             <action selector="backButtonClicked:" destination="LYl-2u-aLa" eventType="touchUpInside" id="szN-QV-O7M"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-pT-2Na">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-pT-2Na">
                                         <rect key="frame" x="187.5" y="34" width="47" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -333,6 +333,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F0D-Cj-pnu"/>
                     <connections>
+                        <outlet property="cityNameLabel" destination="eMy-pT-2Na" id="jkR-KR-End"/>
                         <outlet property="historyTableView" destination="gQ2-8g-cRL" id="NEc-EI-j3e"/>
                     </connections>
                 </viewController>

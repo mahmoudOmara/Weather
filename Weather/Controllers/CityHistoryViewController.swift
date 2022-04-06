@@ -12,6 +12,7 @@ class CityHistoryViewController: UIViewController {
     static let storyBoard = UIStoryboard(name: "Weather", bundle: nil)
     static let storyBoardIdentifier = String(describing: CityHistoryViewController.self)
     
+    @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var historyTableView: UITableView!
     
     //MARK:- Property Injected Items
@@ -23,6 +24,10 @@ class CityHistoryViewController: UIViewController {
         historyTableView.register(HistoryTableViewCell.nib(), forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
         historyTableView.dataSource = self
         historyTableView.delegate = self
+        
+        viewModel.cityName.bind { [weak self] in
+            self?.cityNameLabel.text = $0
+        }
         
         viewModel.numberOfRows.bind { [weak self] _ in
             self?.historyTableView.reloadData()
