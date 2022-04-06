@@ -8,7 +8,7 @@
 import Foundation
 
 struct CityWeatherInfo {
-    var descritption: String
+    var weatherDescritption: String
     var icon: String
     var temp: Double
     var humidity: Double
@@ -48,7 +48,7 @@ extension CityWeatherInfo: Decodable {
         let weatherIcon = weatherIconsArray.first else {
             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: container.codingPath + [RootKeys.weather], debugDescription: "weather array cannot be empty"))
         }
-        descritption = weatherDescription
+        weatherDescritption = weatherDescription
         icon = weatherIcon
         
         //temp

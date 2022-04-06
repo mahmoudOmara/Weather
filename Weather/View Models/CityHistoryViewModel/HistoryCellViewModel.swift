@@ -21,7 +21,7 @@ class HistoryCellViewModel {
     init(cityWeatherInfo: CityWeatherInfo) {
         let dateString = dateFormatter.string(from: cityWeatherInfo.dateRecieved)
         date = Box(dateString)
-        temprature = Box("\(cityWeatherInfo.descritption), \(cityWeatherInfo.temp)° C")
+        temprature = Box("\(cityWeatherInfo.weatherDescritption), \(cityWeatherInfo.temp)° C")
     }
     
 }

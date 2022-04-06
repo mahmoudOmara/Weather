@@ -51,7 +51,7 @@ class CityWeatherDetailsViewModel {
             if let imageData = try? Data(contentsOf: URL(string: iconURL)!) {
                 self.icon.value = UIImage(data: imageData)
             }
-            self.description.value = weatherInfo.descritption
+            self.description.value = weatherInfo.weatherDescritption
             self.temp.value = (self.numbersFormatter.string(from: weatherInfo.temp as NSNumber) ?? "") + "° C"
             self.humidity.value = (self.numbersFormatter.string(from: weatherInfo.humidity as NSNumber) ?? "") + "%"
             self.wind.value =  (self.numbersFormatter.string(from: weatherInfo.wind as NSNumber) ?? "") + " km/h"
@@ -62,7 +62,7 @@ class CityWeatherDetailsViewModel {
     
     private func saveToCityHistory(weatherInfo: CityWeatherInfo) {
         let managedCityWeatherInfo = ManagedCityWeatherInfo(context: CoreDataManager.shared.context)
-        managedCityWeatherInfo.descritption = weatherInfo.descritption
+        managedCityWeatherInfo.weatherDescritption = weatherInfo.weatherDescritption
         managedCityWeatherInfo.icon = weatherInfo.icon
         managedCityWeatherInfo.temp = weatherInfo.temp
         managedCityWeatherInfo.humidity = weatherInfo.humidity

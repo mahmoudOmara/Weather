@@ -22,7 +22,7 @@ class CityHistoryViewModel {
         
         let historyManagedWeatherInfo: [ManagedCityWeatherInfo] = managedCity.history?.allObjects as! [ManagedCityWeatherInfo]
         self.historyWeatherInfo = historyManagedWeatherInfo.compactMap { managedCityWeatherInfo -> (cityWeatherInfo: CityWeatherInfo, managedCityWeatherInfo: ManagedCityWeatherInfo) in
-            let cityWeatherInfo = CityWeatherInfo(descritption: managedCityWeatherInfo.description, icon: managedCityWeatherInfo.icon!, temp: managedCityWeatherInfo.temp, humidity: managedCityWeatherInfo.humidity, wind: managedCityWeatherInfo.wind, dateRecieved: managedCityWeatherInfo.dateRecieved!)
+            let cityWeatherInfo = CityWeatherInfo(weatherDescritption: managedCityWeatherInfo.description, icon: managedCityWeatherInfo.icon!, temp: managedCityWeatherInfo.temp, humidity: managedCityWeatherInfo.humidity, wind: managedCityWeatherInfo.wind, dateRecieved: managedCityWeatherInfo.dateRecieved!)
             return (cityWeatherInfo: cityWeatherInfo, managedCityWeatherInfo: managedCityWeatherInfo)
         }
         self.numberOfRows.value = historyWeatherInfo.count

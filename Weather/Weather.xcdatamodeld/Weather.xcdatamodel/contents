@@ -6,15 +6,15 @@
     </entity>
     <entity name="ManagedCityWeatherInfo" representedClassName="ManagedCityWeatherInfo" syncable="YES" codeGenerationType="class">
         <attribute name="dateRecieved" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="descritption" optional="YES" attributeType="String"/>
         <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="icon" optional="YES" attributeType="String"/>
         <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="weatherDescritption" optional="YES" attributeType="String"/>
         <attribute name="wind" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="city" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCity" inverseName="history" inverseEntity="ManagedCity"/>
     </entity>
     <elements>
         <element name="ManagedCity" positionX="-54" positionY="-9" width="128" height="14"/>
-        <element name="ManagedCityWeatherInfo" positionX="-54" positionY="0" width="128" height="14"/>
+        <element name="ManagedCityWeatherInfo" positionX="-54" positionY="0" width="128" height="134"/>
     </elements>
 </model>
