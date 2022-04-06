@@ -47,7 +47,7 @@
                                 <rect key="frame" x="313" y="88" width="101" height="113"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jWw-Oz-jvP">
-                                <rect key="frame" x="183.5" y="77.5" width="227.5" height="88"/>
+                                <rect key="frame" x="183.5" y="77.5" width="229" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD1-6g-P4n">
                                         <rect key="frame" x="0.0" y="34" width="47" height="20.5"/>
@@ -56,11 +56,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbM-ON-vsQ">
-                                        <rect key="frame" x="152.5" y="0.0" width="75" height="88"/>
+                                        <rect key="frame" x="161" y="0.0" width="68" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="+"/>
+                                        <state key="normal" image="plus" catalog="system"/>
                                         <connections>
                                             <action selector="addCityButtonClicked:" destination="wbM-hA-UJu" eventType="touchUpInside" id="10i-NG-KKi"/>
                                         </connections>
@@ -75,7 +76,7 @@
                             <constraint firstItem="wbL-ym-Blk" firstAttribute="leading" secondItem="YOA-o4-FAg" secondAttribute="leading" id="2d8-zG-fFW"/>
                             <constraint firstItem="yHy-WX-XhB" firstAttribute="centerY" secondItem="jWw-Oz-jvP" secondAttribute="centerY" constant="23" id="3Om-pc-yGN"/>
                             <constraint firstItem="Yoj-sg-uA2" firstAttribute="leading" secondItem="YOA-o4-FAg" secondAttribute="leading" id="9aa-Y8-h0A"/>
-                            <constraint firstItem="yHy-WX-XhB" firstAttribute="centerX" secondItem="JbM-ON-vsQ" secondAttribute="centerX" constant="-10" id="CcA-tz-lko"/>
+                            <constraint firstItem="yHy-WX-XhB" firstAttribute="centerX" secondItem="JbM-ON-vsQ" secondAttribute="centerX" constant="-15" id="CcA-tz-lko"/>
                             <constraint firstItem="JD1-6g-P4n" firstAttribute="centerX" secondItem="YOA-o4-FAg" secondAttribute="centerX" id="LAY-yg-V25"/>
                             <constraint firstItem="yHy-WX-XhB" firstAttribute="top" secondItem="lpA-5S-JEx" secondAttribute="top" id="ML3-jB-c7G"/>
                             <constraint firstItem="lpA-5S-JEx" firstAttribute="trailing" secondItem="yHy-WX-XhB" secondAttribute="trailing" id="ND6-ky-Y2M"/>
@@ -109,20 +110,21 @@
                                 <rect key="frame" x="0.0" y="34" width="102" height="113"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YIJ-us-zRc">
-                                <rect key="frame" x="1" y="23.5" width="229.5" height="88"/>
+                                <rect key="frame" x="2.5" y="23.5" width="228" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-NZ-hI6">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="88"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="x"/>
+                                        <state key="normal" image="xmark" catalog="system"/>
                                         <connections>
                                             <action selector="closeButtonClicked:" destination="Ztz-HU-oEK" eventType="touchUpInside" id="dlL-wB-fHk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd6-oi-l3V">
-                                        <rect key="frame" x="182.5" y="34" width="47" height="20.5"/>
+                                        <rect key="frame" x="181" y="34" width="47" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -270,10 +272,10 @@
             </objects>
             <point key="canvasLocation" x="1874" y="833"/>
         </scene>
-        <!--Cities View Controller-->
+        <!--City History View Controller-->
         <scene sceneID="5iV-Y0-WYE">
             <objects>
-                <viewController id="LYl-2u-aLa" customClass="CitiesViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CityHistoryViewController" id="LYl-2u-aLa" customClass="CityHistoryViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8cB-EF-nG4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,28 +287,29 @@
                                 <rect key="frame" x="0.0" y="141.5" width="414" height="754.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button_right" translatesAutoresizingMaskIntoConstraints="NO" id="BHO-Fk-4o2">
-                                <rect key="frame" x="313" y="44" width="101" height="113"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button_left" translatesAutoresizingMaskIntoConstraints="NO" id="BHO-Fk-4o2">
+                                <rect key="frame" x="0.0" y="44" width="102" height="113"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RwU-Iw-a9t">
-                                <rect key="frame" x="183.5" y="33.5" width="227.5" height="88"/>
+                                <rect key="frame" x="1.5" y="33.5" width="229" height="88"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-pT-2Na">
-                                        <rect key="frame" x="0.0" y="34" width="47" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zy-vG-9vx">
-                                        <rect key="frame" x="152.5" y="0.0" width="75" height="88"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="88"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="+"/>
+                                        <state key="normal" image="arrow.left" catalog="system"/>
                                         <connections>
                                             <action selector="addCityButtonClicked:" destination="LYl-2u-aLa" eventType="touchUpInside" id="ViF-Py-ddf"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-pT-2Na">
+                                        <rect key="frame" x="182" y="34" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -314,11 +317,11 @@
                         <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="gQ2-8g-cRL" secondAttribute="trailing" id="405-ta-9He"/>
-                            <constraint firstItem="xB7-Su-6S1" firstAttribute="trailing" secondItem="BHO-Fk-4o2" secondAttribute="trailing" id="9cw-Wz-sv2"/>
+                            <constraint firstItem="xB7-Su-6S1" firstAttribute="leading" secondItem="BHO-Fk-4o2" secondAttribute="leading" id="9cw-Wz-sv2"/>
                             <constraint firstItem="gQ2-8g-cRL" firstAttribute="top" secondItem="RwU-Iw-a9t" secondAttribute="bottom" constant="20" id="Cuc-Ly-JQZ"/>
                             <constraint firstAttribute="bottom" secondItem="gQ2-8g-cRL" secondAttribute="bottom" id="EBn-pX-0iW"/>
                             <constraint firstItem="LTY-gu-e0C" firstAttribute="leading" secondItem="8cB-EF-nG4" secondAttribute="leading" id="J4g-0x-PxR"/>
-                            <constraint firstItem="BHO-Fk-4o2" firstAttribute="centerX" secondItem="9zy-vG-9vx" secondAttribute="centerX" constant="-10" id="L7b-ia-mB7"/>
+                            <constraint firstItem="BHO-Fk-4o2" firstAttribute="centerX" secondItem="9zy-vG-9vx" secondAttribute="centerX" constant="15" id="L7b-ia-mB7"/>
                             <constraint firstItem="BHO-Fk-4o2" firstAttribute="centerY" secondItem="RwU-Iw-a9t" secondAttribute="centerY" constant="23" id="PWH-IN-EhZ"/>
                             <constraint firstItem="BHO-Fk-4o2" firstAttribute="top" secondItem="xB7-Su-6S1" secondAttribute="top" id="UQv-kE-mrf"/>
                             <constraint firstItem="eMy-pT-2Na" firstAttribute="centerX" secondItem="8cB-EF-nG4" secondAttribute="centerX" id="htS-4U-wET"/>
@@ -339,8 +342,12 @@
     </scenes>
     <resources>
         <image name="Background" width="375" height="223"/>
+        <image name="Button_left" width="102" height="113"/>
         <image name="Button_modal" width="102" height="113"/>
         <image name="Button_right" width="101" height="113"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="BackgroundColor">
             <color red="0.83921568627450982" green="0.82745098039215681" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
