@@ -9,6 +9,7 @@ import UIKit
 
 class CityWeatherDetailsViewController: UIViewController {
 
+    @IBOutlet weak var detailsCardView: UIView!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var tempratureLabel: UILabel!
@@ -25,6 +26,12 @@ class CityWeatherDetailsViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        detailsCardView.layer.cornerRadius = 45
+        detailsCardView.layer.shadowColor = UIColor.black.cgColor
+        detailsCardView.layer.shadowOffset = CGSize(width: -10, height: 10)
+        detailsCardView.layer.shadowOpacity = 0.2
+        detailsCardView.layer.shadowRadius = 15.0
         
         viewModel.icon.bind { [weak self] in
             self?.icon.image = $0

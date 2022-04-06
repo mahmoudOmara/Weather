@@ -249,6 +249,7 @@
                     <navigationItem key="navigationItem" id="npk-lU-vj7"/>
                     <connections>
                         <outlet property="descriptionLabel" destination="rZ2-bG-vfX" id="zNi-0u-RR4"/>
+                        <outlet property="detailsCardView" destination="OwT-I1-nL9" id="kQC-h4-6vP"/>
                         <outlet property="humidityLabel" destination="bCK-uh-u2T" id="PIP-82-UWC"/>
                         <outlet property="icon" destination="HMM-Tt-fCn" id="faU-dV-KmF"/>
                         <outlet property="tempratureLabel" destination="Typ-dB-B97" id="DbE-ab-wg2"/>
