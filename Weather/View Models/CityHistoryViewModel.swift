@@ -29,6 +29,9 @@ class CityHistoryViewModel {
             let cityWeatherInfo = CityWeatherInfo(descritption: managedCityWeatherInfo.description, icon: managedCityWeatherInfo.icon!, temp: managedCityWeatherInfo.temp, humidity: managedCityWeatherInfo.humidity, wind: managedCityWeatherInfo.wind, dateRecieved: managedCityWeatherInfo.dateRecieved!)
             return (cityWeatherInfo: cityWeatherInfo, managedCityWeatherInfo: managedCityWeatherInfo)
         }
-        
+    }
+    
+    func viewModelForCell(at index: Int) -> HistoryCellViewModel {
+        return HistoryCellViewModel(cityWeatherInfo: historyWeatherInfo[index].cityWeatherInfo)
     }
 }

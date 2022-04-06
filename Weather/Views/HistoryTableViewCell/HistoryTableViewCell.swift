@@ -11,6 +11,9 @@ class HistoryTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = String(describing: HistoryTableViewCell.self)
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tempratureLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
