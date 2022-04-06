@@ -259,6 +259,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="npk-lU-vj7"/>
                     <connections>
+                        <outlet property="cityNameLabel" destination="jd6-oi-l3V" id="NSQ-UY-ymV"/>
                         <outlet property="dateRecievedOnLabel" destination="iRn-RT-cfc" id="N9J-RN-PSc"/>
                         <outlet property="descriptionLabel" destination="rZ2-bG-vfX" id="zNi-0u-RR4"/>
                         <outlet property="detailsCardView" destination="OwT-I1-nL9" id="kQC-h4-6vP"/>

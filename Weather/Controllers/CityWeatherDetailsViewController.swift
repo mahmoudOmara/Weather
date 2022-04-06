@@ -9,6 +9,7 @@ import UIKit
 
 class CityWeatherDetailsViewController: UIViewController {
 
+    @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var detailsCardView: UIView!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -43,6 +44,10 @@ class CityWeatherDetailsViewController: UIViewController {
                 self?.detailsCardView.isHidden = false
                 self?.hideLoading()
             }
+        }
+        
+        viewModel.cityName.bind { [weak self] in
+            self?.cityNameLabel.text = $0
         }
         
         viewModel.icon.bind { [weak self] in

@@ -30,6 +30,7 @@ class CityWeatherDetailsViewModel {
       return dateFormatter
     }()
     
+    let cityName = Box("")
     let icon: Box<UIImage?> = Box(nil)
     let description = Box("")
     let temp = Box("")
@@ -41,6 +42,8 @@ class CityWeatherDetailsViewModel {
     init(city: City, managedCity: ManagedCity) {
         self.city = city
         self.managedCity = managedCity
+        
+        self.cityName.value = city.name
         
         self.loadingState.value = .loading
         OpenWeatherService.getWeatherDataForCity(self.city.name) { [weak self] weatherInfo, error in
