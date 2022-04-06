@@ -33,7 +33,7 @@ class CityWeatherDetailsViewModel {
         OpenWeatherService.getWeatherDataForCity(self.city.name) { [weak self] weatherInfo, error in
             guard let self = self else { return }
             guard let weatherInfo = weatherInfo else { return }
-            let iconURL = "http://openweathermap.org/img/w/\(weatherInfo.icon).png"
+            let iconURL = "https://openweathermap.org/img/w/\(weatherInfo.icon).png"
             if let imageData = try? Data(contentsOf: URL(string: iconURL)!) {
                 self.icon.value = UIImage(data: imageData)
             }
