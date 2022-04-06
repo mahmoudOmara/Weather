@@ -23,6 +23,15 @@ class CityHistoryViewController: UIViewController {
         historyTableView.register(HistoryTableViewCell.nib(), forCellReuseIdentifier: HistoryTableViewCell.reuseIdentifier)
         historyTableView.dataSource = self
         historyTableView.delegate = self
+        
+        viewModel.numberOfRows.bind { [weak self] _ in
+            self?.historyTableView.reloadData()
+        }
+//        
+//        viewModel.route.bind { [weak self] route in
+//            guard let route = route else { return }
+//            self?.navigateByUsing(route: route)
+//        }
     }
     
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -39,7 +48,7 @@ extension CityHistoryViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRows.value
     }
 
 }
@@ -47,6 +56,7 @@ extension CityHistoryViewController: UITableViewDataSource {
 extension CityHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+//        viewModel.didSelectCity(at: indexPath.row)
     }
     
 }

@@ -301,7 +301,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
                                         <connections>
-                                            <action selector="addCityButtonClicked:" destination="LYl-2u-aLa" eventType="touchUpInside" id="ViF-Py-ddf"/>
+                                            <action selector="backButtonClicked:" destination="LYl-2u-aLa" eventType="touchUpInside" id="szN-QV-O7M"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMy-pT-2Na">
@@ -332,7 +332,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F0D-Cj-pnu"/>
                     <connections>
-                        <outlet property="citiesTableView" destination="gQ2-8g-cRL" id="GYM-mT-Lf8"/>
+                        <outlet property="historyTableView" destination="gQ2-8g-cRL" id="NEc-EI-j3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yBI-gR-fFO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
