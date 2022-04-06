@@ -34,6 +34,17 @@ class CityWeatherDetailsViewController: UIViewController {
         detailsCardView.layer.shadowOpacity = 0.2
         detailsCardView.layer.shadowRadius = 15.0
         
+        viewModel.loadingState.bind { [weak self] in
+            switch $0 {
+            case .loading:
+                self?.detailsCardView.isHidden = true
+                self?.showLoading()
+            case .notLoading:
+                self?.detailsCardView.isHidden = false
+                self?.hideLoading()
+            }
+        }
+        
         viewModel.icon.bind { [weak self] in
             self?.icon.image = $0
         }
