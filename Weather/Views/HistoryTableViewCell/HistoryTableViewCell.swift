@@ -29,8 +29,14 @@ class HistoryTableViewCell: UITableViewCell {
         return UINib(nibName: String(describing: HistoryTableViewCell.self), bundle: nil)
     }
     
-    func configure() {
+    func configure(viewModel: HistoryCellViewModel) {
+        viewModel.date.bind { [weak self] in
+            self?.dateLabel.text = $0
+        }
         
+        viewModel.temprature.bind { [weak self] in
+            self?.tempratureLabel.text = $0
+        }
     }
     
 }

@@ -12,11 +12,7 @@ class CityHistoryViewModel {
     private let city: City
     private let managedCity: ManagedCity
 
-    private var historyWeatherInfo: [(cityWeatherInfo: CityWeatherInfo, managedCityWeatherInfo: ManagedCityWeatherInfo)] = [] {
-        didSet {
-            self.numberOfRows.value = historyWeatherInfo.count
-        }
-    }
+    private var historyWeatherInfo: [(cityWeatherInfo: CityWeatherInfo, managedCityWeatherInfo: ManagedCityWeatherInfo)] = [] 
 
     var numberOfRows = Box(0)
 
@@ -29,6 +25,7 @@ class CityHistoryViewModel {
             let cityWeatherInfo = CityWeatherInfo(descritption: managedCityWeatherInfo.description, icon: managedCityWeatherInfo.icon!, temp: managedCityWeatherInfo.temp, humidity: managedCityWeatherInfo.humidity, wind: managedCityWeatherInfo.wind, dateRecieved: managedCityWeatherInfo.dateRecieved!)
             return (cityWeatherInfo: cityWeatherInfo, managedCityWeatherInfo: managedCityWeatherInfo)
         }
+        self.numberOfRows.value = historyWeatherInfo.count
     }
     
     func viewModelForCell(at index: Int) -> HistoryCellViewModel {

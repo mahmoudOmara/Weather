@@ -43,7 +43,7 @@ class CityHistoryViewController: UIViewController {
 extension CityHistoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.reuseIdentifier) as! HistoryTableViewCell
-        cell.configure()
+        cell.configure(viewModel: viewModel.viewModelForCell(at: indexPath.row))
         return cell
     }
 
