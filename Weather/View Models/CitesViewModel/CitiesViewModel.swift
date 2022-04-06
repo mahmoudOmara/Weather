@@ -41,6 +41,12 @@ class CitiesViewModel {
         route.value = .addNewCity
     }
     
+    func didSelectCity(at index: Int) {
+        let generalCity = cities[index]
+        let cityWeatherDetailsViewModel = CityWeatherDetailsViewModel(city: generalCity.city, managedCity: generalCity.mangedCity)
+        route.value = .weatherForCity(cityWeatherDetailsViewModel: cityWeatherDetailsViewModel)
+    }
+    
     func addNewCity(cityName: String) {
         let managedCity = ManagedCity(context: CoreDataManager.shared.context)
         managedCity.name = cityName

@@ -45,13 +45,19 @@ class CitiesViewController: UIViewController {
             present(alert, animated: true)
           }
         
+        func navigateToCityWeatherDetails(_ cityWeatherDetailsViewModel: CityWeatherDetailsViewModel) {
+            let cityWeatherDetailsViewController = CityWeatherDetailsViewController.storyBoard.instantiateViewController(withIdentifier: CityWeatherDetailsViewController.storyBoardIdentifier) as! CityWeatherDetailsViewController
+            cityWeatherDetailsViewController.viewModel = cityWeatherDetailsViewModel
+            self.navigationController?.pushViewController(cityWeatherDetailsViewController, animated: true)
+        }
+        
         switch route {
         case .addNewCity:
             navigateToAddNewCity()
         case .histoyAboutCity(let city):
             break
-        case .weatherForCity(let city):
-            break
+        case let .weatherForCity(cityWeatherDetailsViewModel):
+            navigateToCityWeatherDetails(cityWeatherDetailsViewModel)
         }
     }
     
@@ -77,6 +83,7 @@ extension CitiesViewController: UITableViewDataSource {
 extension CitiesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.didSelectCity(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

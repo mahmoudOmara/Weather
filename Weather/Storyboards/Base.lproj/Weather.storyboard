@@ -92,6 +92,58 @@
             </objects>
             <point key="canvasLocation" x="1875" y="138"/>
         </scene>
+        <!--City Weather Details View Controller-->
+        <scene sceneID="yAI-is-fRp">
+            <objects>
+                <viewController storyboardIdentifier="CityWeatherDetailsViewController" id="Ztz-HU-oEK" customClass="CityWeatherDetailsViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="guA-iG-lbY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="P6u-ro-QfA">
+                                <rect key="frame" x="0.0" y="673" width="414" height="223"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Button_right" translatesAutoresizingMaskIntoConstraints="NO" id="pU9-GO-wts">
+                                <rect key="frame" x="313" y="44" width="101" height="113"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YIJ-us-zRc">
+                                <rect key="frame" x="183.5" y="33.5" width="227.5" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd6-oi-l3V">
+                                        <rect key="frame" x="0.0" y="34" width="47" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-NZ-hI6">
+                                        <rect key="frame" x="152.5" y="0.0" width="75" height="88"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <inset key="contentEdgeInsets" minX="25" minY="20" maxX="25" maxY="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pLE-H4-3Un"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="P6u-ro-QfA" secondAttribute="trailing" id="CEu-hY-Sow"/>
+                            <constraint firstItem="pU9-GO-wts" firstAttribute="top" secondItem="pLE-H4-3Un" secondAttribute="top" id="DiX-kk-OSt"/>
+                            <constraint firstItem="P6u-ro-QfA" firstAttribute="leading" secondItem="guA-iG-lbY" secondAttribute="leading" id="GM2-DB-Qgg"/>
+                            <constraint firstAttribute="bottom" secondItem="P6u-ro-QfA" secondAttribute="bottom" id="Pes-Nn-iPB"/>
+                            <constraint firstItem="pU9-GO-wts" firstAttribute="centerY" secondItem="YIJ-us-zRc" secondAttribute="centerY" constant="23" id="RzO-LY-ugs"/>
+                            <constraint firstItem="pU9-GO-wts" firstAttribute="centerX" secondItem="vgq-NZ-hI6" secondAttribute="centerX" constant="-10" id="aqG-bg-KOe"/>
+                            <constraint firstItem="jd6-oi-l3V" firstAttribute="centerX" secondItem="guA-iG-lbY" secondAttribute="centerX" id="mkP-BX-6Jz"/>
+                            <constraint firstItem="pLE-H4-3Un" firstAttribute="trailing" secondItem="pU9-GO-wts" secondAttribute="trailing" id="uie-ul-XKM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="npk-lU-vj7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1f-8g-BtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396" y="826"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Background" width="375" height="223"/>
