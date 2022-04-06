@@ -15,5 +15,11 @@ class CityWeatherDetailsViewModel {
     init(city: City, managedCity: ManagedCity) {
         self.city = city
         self.managedCity = managedCity
+        
+        OpenWeatherService.getWeatherDataForCity(self.city.name) { [weak self] weatherInfo, error in
+            guard let self = self else { return }
+            guard let weatherInfo = weatherInfo else { return }
+            
+        }
     }
 }
