@@ -47,4 +47,7 @@ class CityWeatherDetailsViewController: UIViewController {
         }
     }
 
+    @IBAction func closeButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }

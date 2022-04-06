@@ -38,9 +38,9 @@ class CityWeatherDetailsViewModel {
                 self.icon.value = UIImage(data: imageData)
             }
             self.description.value = weatherInfo.descritption
-            self.temp.value = self.numbersFormatter.string(from: weatherInfo.temp as NSNumber) ?? ""
-            self.humidity.value = self.numbersFormatter.string(from: weatherInfo.humidity as NSNumber) ?? ""
-            self.wind.value =  self.numbersFormatter.string(from: weatherInfo.wind as NSNumber) ?? ""
+            self.temp.value = (self.numbersFormatter.string(from: weatherInfo.temp as NSNumber) ?? "") + "° C"
+            self.humidity.value = (self.numbersFormatter.string(from: weatherInfo.humidity as NSNumber) ?? "") + "%"
+            self.wind.value =  (self.numbersFormatter.string(from: weatherInfo.wind as NSNumber) ?? "") + " km/h"
         }
     }
 }

@@ -48,7 +48,7 @@ class CitiesViewController: UIViewController {
         func navigateToCityWeatherDetails(_ cityWeatherDetailsViewModel: CityWeatherDetailsViewModel) {
             let cityWeatherDetailsViewController = CityWeatherDetailsViewController.storyBoard.instantiateViewController(withIdentifier: CityWeatherDetailsViewController.storyBoardIdentifier) as! CityWeatherDetailsViewController
             cityWeatherDetailsViewController.viewModel = cityWeatherDetailsViewModel
-            self.navigationController?.pushViewController(cityWeatherDetailsViewController, animated: true)
+            self.present(cityWeatherDetailsViewController, animated: true)
         }
         
         switch route {

@@ -21,7 +21,8 @@ class OpenWeatherService {
         let url = host + path
         let params = [
             "q" : cityName,
-            "appid" : apiKey
+            "appid" : apiKey,
+            "units" : "metric"
         ]
         let manager = AFHTTPSessionManager()
         manager.get(url, parameters: params, headers: nil, progress: nil) {
